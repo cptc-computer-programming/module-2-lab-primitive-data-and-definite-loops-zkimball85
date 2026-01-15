@@ -7,7 +7,7 @@ public class PatternSection {
     public static void main(String[] args) {
         // TODO: Call each method below in this order:
         printEdge();
-        // printDiamondTop();
+        printDiamondTop();
         // printDiamondBottom();
         printEdge();
     }
@@ -21,6 +21,7 @@ public class PatternSection {
             System.out.print("=*");
         }
         System.out.print("+");
+        System.out.println();
     }
 
     // TODO: Print the top half of the “double-diamond” section.
@@ -30,7 +31,42 @@ public class PatternSection {
     // - inside, dots decrease while "/\" pairs increase, then dots again
     // - use SIZE in all loop bounds (no magic numbers except 0/1)
     public static void printDiamondTop() {
-        // loop through
+
+        // loop through the total rows in the top half of the diamond 
+        // we know that when SIZE = 3, total rows is 6
+
+        for (int row = 0; row < SIZE * 2; row++) {
+            //begin the row with a pipe
+            System.out.print("|");
+            
+
+            int dots = (SIZE * 2 - 1) - row;
+
+            
+            //print leading dots .
+
+            for (int i = 0; i < dots; i++) { 
+                System.out.print(".");
+                
+                }
+
+            int triangles = row + 1;
+            //print triangles 
+            for (int i = 0; i < triangles; i++){
+                
+                System.out.print("/\\");
+                
+                }
+                //print trailing dots
+                for (int i = 0; i < dots; i++) { 
+                    System.out.print(".");
+                    }
+
+            // end the row with a pipe and a new line
+            System.out.print("|");
+            System.out.println();
+            }
+
     }
 
     // TODO: Print the bottom half (mirror/inverse of the top half).
@@ -44,3 +80,17 @@ public class PatternSection {
     }
     
 }
+// +=*=*=*=*=*=*+
+// |...../\.....|
+// |..../\/\....|
+// |.../\/\/\...|
+// |../\/\/\/\..|
+// |./\/\/\/\/\.|
+// |/\/\/\/\/\/\|
+// |\/\/\/\/\/\/|
+// |.\/\/\/\/\/.|
+// |..\/\/\/\/..|
+// |...\/\/\/...|
+// |....\/\/....|
+// |.....\/.....|
+// +=*=*=*=*=*=*+
