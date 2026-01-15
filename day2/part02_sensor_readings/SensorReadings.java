@@ -17,6 +17,7 @@ public class SensorReadings {
             double value = (minute / 5.0) * 2;
             System.out.println("Minute: " + minute + ", Value: " + value);
         }
+        // adding a new line after any output looks nicer
         System.out.println();
     }
     
